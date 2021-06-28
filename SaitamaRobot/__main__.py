@@ -79,13 +79,15 @@ PM_START_TEXT = """
 
 ➛ I am an Anime themed group management bot ××
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-`Maintained By` @Anomaliii
+*Maintained By* @RxyMX
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
+• *Uptime:* `{}`
+• `{}` *users, across* `{}` *chats.*
 ➛ Find the list of available commands with /help ××
 """
 
 HELP_STRINGS = """
-*Main* commands available[:](https://telegra.ph/file/b7430b90a96224f0a79b6.jpg)
+*Main* commands available[:](https://telegra.ph/file/b3e970a4d031d58749308.jpg)
 
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
@@ -96,7 +98,7 @@ HELP_STRINGS = """
 """
 
 
-KAI_IMG = "https://telegra.ph/file/b2d1da6b005787000f0d1.jpg"
+KAI_IMG = "https://telegra.ph/file/6f3ef552043d47034bf48.jpg"
 
 DONATE_STRING = """× I'm Free for Everyone ×"""
 
@@ -220,34 +222,32 @@ def start(update: Update, context: CallbackContext):
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="✤ Add to your Group ✤",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username
-                                ),
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="✯ Support Group ✯",
-                                url=f"https://t.me/zerounions",
-                            ),
-                            InlineKeyboardButton(
-                                text="✫ Source Code ✫",
-                                url="https://github.com/Ryomen-Sukuna/Kai",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="[► Help ◄]",
-                                url="t.me/{}?start=help".format(context.bot.username),
-                            )
-                        ],
-                    ]
-                ),
-            )
+                    [[
+                        InlineKeyboardButton(
+                            text="➕ Add Oda To Your Group",
+                            url="t.me/{}?startgroup=true".format(
+                                context.bot.username))
+                    ],
+                     [
+                         InlineKeyboardButton(
+                             text="⚙️ Support",
+                             url=f"https://t.me/{SUPPORT_CHAT}"),
+                         InlineKeyboardButton(
+                             text="🎉 Updates",
+                             url="https://t.me/OdaUpdate"),
+                         InlineKeyboardButton(
+                             text="🗃 Guide",
+                             url="https://UserLazy.github.io/UserLazy"),
+              
+                    ],
+                     [
+                        InlineKeyboardButton(
+                             text="Anime Chat",
+                             url="https://t.me/Grup_Anime_Chat"),                    
+                        InlineKeyboardButton(
+                             text="Help & Commands",
+                             url="https://t.me/OdaRobot?start=help"),      
+                    ]]))
     else:
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
